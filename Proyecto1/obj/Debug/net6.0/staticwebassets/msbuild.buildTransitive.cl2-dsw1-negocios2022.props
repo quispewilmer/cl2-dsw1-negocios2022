@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\cl2-dsw1-negocios2022.props" />
+</Project>
