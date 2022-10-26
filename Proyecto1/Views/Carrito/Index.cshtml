@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Proyecto1.Models.ViewModels.HomeViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center my-3">Carrito de Venta - @Model.Count() Productos Seleccionados</h1>
+<div class="container">
+    <table class="table" data-toggle="table" data-pagination="true" data-sort-order="asc" data-show-extended-pagination="true">
+        <thead>
+            <tr>
+                <th data-field="IdePro" data-sortable="true" class="px-2">
+                    @Html.DisplayNameFor(model => model.IdePro)
+                </th>
+                <th data-field="DesPro" data-sortable="true" class="px-2">
+                    @Html.DisplayNameFor(model => model.DesPro)
+                </th>
+                <th data-field="IdeCat" data-sortable="true" class="px-2">
+                    @Html.DisplayNameFor(model => model.IdeCat)
+                </th>
+                <th data-field="PrePro" data-sortable="true" class="px-2">
+                    @Html.DisplayNameFor(model => model.PrePro)
+                </th>
+                <th data-field="Cant" data-sortable="true" class="px-2">
+                    @Html.DisplayNameFor(model => model.Cant)
+                </th>
+                <th data-field="Subtotal" data-sortable="true" class="px-2">
+                    Subtotal
+                </th>
+                <th data-field="ImgPro" data-sortable="true" class="px-2">
+                    @Html.DisplayNameFor(model => model.ImgPro)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdePro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DesPro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdeCat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PrePro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cant)
+                    </td>
+                    <td>
+                        @(item.PrePro * item.Cant)
+                    </td>
+                    <td>
+                        <img src="@Html.DisplayFor(modelItem => item.ImgPro)" height="80px" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @{
+        string total = Model.Aggregate(0.00, (acc, x) => acc + ((double) x.Cant * (double) x.PrePro)).ToString();
+    }
+    <div class="d-flex justify-content-between">
+        <p>Total a pagar: <span class="h2">S/. @(total)</span></p>
+    </div>
+</div>

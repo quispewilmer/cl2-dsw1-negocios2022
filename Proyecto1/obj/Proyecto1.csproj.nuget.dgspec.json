@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\i202016924\\programming\\C# (.NET)\\cl2-dsw1-negocios2022\\cl2-dsw1-negocios2022\\Proyecto1.csproj": {}
+    "C:\\Users\\i202016924\\programming\\C# (.NET)\\cl2-dsw1-negocios2022\\Proyecto1\\Proyecto1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\i202016924\\programming\\C# (.NET)\\cl2-dsw1-negocios2022\\cl2-dsw1-negocios2022\\Proyecto1.csproj": {
+    "C:\\Users\\i202016924\\programming\\C# (.NET)\\cl2-dsw1-negocios2022\\Proyecto1\\Proyecto1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\i202016924\\programming\\C# (.NET)\\cl2-dsw1-negocios2022\\cl2-dsw1-negocios2022\\Proyecto1.csproj",
+        "projectUniqueName": "C:\\Users\\i202016924\\programming\\C# (.NET)\\cl2-dsw1-negocios2022\\Proyecto1\\Proyecto1.csproj",
         "projectName": "Proyecto1",
-        "projectPath": "C:\\Users\\i202016924\\programming\\C# (.NET)\\cl2-dsw1-negocios2022\\cl2-dsw1-negocios2022\\Proyecto1.csproj",
+        "projectPath": "C:\\Users\\i202016924\\programming\\C# (.NET)\\cl2-dsw1-negocios2022\\Proyecto1\\Proyecto1.csproj",
         "packagesPath": "C:\\Users\\i202016924\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\i202016924\\programming\\C# (.NET)\\cl2-dsw1-negocios2022\\cl2-dsw1-negocios2022\\obj\\",
+        "outputPath": "C:\\Users\\i202016924\\programming\\C# (.NET)\\cl2-dsw1-negocios2022\\Proyecto1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\i202016924\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -47,6 +47,20 @@
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.10, )"
             }

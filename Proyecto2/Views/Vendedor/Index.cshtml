@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Proyecto2.Models.Vendedor>
+
+@{
+    ViewData["Title"] = "Lista";
+}
+
+<h1>Lista</h1>
+
+<p>
+    <a asp-action="Create" role="button" class="btn btn-success">Registrar</a>
+</p>
+    <table class="table" data-toggle="table" data-pagination="true" data-sort-order="asc" data-show-extended-pagination="true">
+    <thead>
+        <tr>
+            <th data-field="IdeVen" data-sortable="true" class="px-2">
+                @Html.DisplayNameFor(model => model.IdeVen)
+            </th>
+            <th data-field="NomVen" data-sortable="true" class="px-2">
+                @Html.DisplayNameFor(model => model.NomVen)
+            </th>
+            <th data-field="ApeVen" data-sortable="true" class="px-2">
+                @Html.DisplayNameFor(model => model.ApeVen)
+            </th>
+            <th data-field="DirVen" data-sortable="true" class="px-2">
+                @Html.DisplayNameFor(model => model.DirVen)
+            </th>
+            <th data-field="TelVen" data-sortable="true" class="px-2">
+                @Html.DisplayNameFor(model => model.TelVen)
+            </th>
+            <th data-field="IdeDis" data-sortable="true" class="px-2">
+                @Html.DisplayNameFor(model => model.IdeDis)
+            </th>
+            <th data-field="CorVen" data-sortable="true" class="px-2">
+                @Html.DisplayNameFor(model => model.CorVen)
+            </th>
+            <th data-field="SueVen" data-sortable="true" class="px-2">
+                @Html.DisplayNameFor(model => model.SueVen)
+            </th>
+            <th>Operaciones</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdeVen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomVen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApeVen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DirVen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelVen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdeDis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CorVen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SueVen)
+            </td>
+            <td>
+                <div class="d-flex justify-content-around align-items-stretch">
+                    <a asp-action="Edit" asp-route-id="@item.IdeVen"><i class="bi bi-pencil-fill text-warning"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.IdeVen"><i class="bi bi-search"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.IdeVen"><i class="bi bi-trash-fill text-danger"></i></a>
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

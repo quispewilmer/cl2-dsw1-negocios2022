@@ -1,0 +1,60 @@
+﻿@model Proyecto2.Models.Vendedor
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h1>Crear</h1>
+
+    <div>
+        <a asp-action="Index"><i class="bi bi-arrow-left-square-fill h3"></i></a>
+    </div>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group py-2">
+                <label asp-for="NomVen" class="control-label"></label>
+                <input asp-for="NomVen" class="form-control" />
+                <span asp-validation-for="NomVen" class="text-danger"></span>
+            </div>
+            <div class="form-group py-2">
+                <label asp-for="ApeVen" class="control-label"></label>
+                <input asp-for="ApeVen" class="form-control" />
+                <span asp-validation-for="ApeVen" class="text-danger"></span>
+            </div>
+            <div class="form-group py-2">
+                <label asp-for="DirVen" class="control-label"></label>
+                <input asp-for="DirVen" class="form-control" />
+                <span asp-validation-for="DirVen" class="text-danger"></span>
+            </div>
+            <div class="form-group py-2">
+                <label asp-for="TelVen" class="control-label"></label>
+                <input asp-for="TelVen" class="form-control" />
+                <span asp-validation-for="TelVen" class="text-danger"></span>
+            </div>
+            <div class="form-group py-2">
+                <label asp-for="IdeDis" class="control-label"></label>
+                <select asp-for="IdeDis" class ="form-control" asp-items="ViewBag.IdeDis"></select>
+            </div>
+            <div class="form-group py-2">
+                <label asp-for="CorVen" class="control-label"></label>
+                <input asp-for="CorVen" class="form-control" />
+                <span asp-validation-for="CorVen" class="text-danger"></span>
+            </div>
+            <div class="form-group py-2">
+                <label asp-for="SueVen" class="control-label"></label>
+                <input asp-for="SueVen" class="form-control" />
+                <span asp-validation-for="SueVen" class="text-danger"></span>
+            </div>
+            <div class="form-group py-2">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

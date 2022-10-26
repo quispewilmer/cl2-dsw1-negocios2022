@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Proyecto1.Models.Producto>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="w-100">
+    <img src="~/fotos/main_banner.jpg" class="main-banner" />
+</section>
+<div class="container">
+    <div class="row py-4">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 py-4">
+                <form method="post" asp-action="Index" asp-controller="Home">
+                    <div class="card text-center text-white bg-dark" style="width: 18rem;">
+                        <img src="@item.ImgPro?.ToString()" class="card-img-top" alt="@item.DesPro"
+                        style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.DesPro</h5>
+                            <p class="card-text">Precio: @item.PrePro.ToString("N2")</p>
+                            <p class="card-text">Categoría: @item.IdeCatNavigation.DesCat</p>
+                            <p class="card-text">Stock: @item.StoPro</p>
+                            <div class="mb-3 d-flex align-items-center gap-3">
+                                <label for="cantidad" class="form-label">Cantidad:</label>
+                                <input type="number" class="form-control" id="cantidad" name="Cant">
+                            </div>
+                            <input type="hidden" name="IdePro" value="@item.IdePro" />
+                            <input type="hidden" name="DesPro" value="@item.DesPro" />
+                            <input type="hidden" name="IdeCat" value="@item.IdeCat" />
+                            <input type="hidden" name="PrePro" value="@item.PrePro" />
+                            <input type="hidden" name="StoPro" value="@item.StoPro" />
+                            <input type="hidden" name="ImgPro" value="@item.ImgPro" />
+                            <input class="btn btn-primary" type="submit" value="ORDENAR" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        }
+    </div>
+</div>
